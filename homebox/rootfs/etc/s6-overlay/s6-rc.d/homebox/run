@@ -1,0 +1,19 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant App: Homebox
+# Starts Homebox
+# ==============================================================================
+
+bashio::log.info "Starting Homebox..."
+
+# Set Homebox environment variables
+export HBOX_MODE="production"
+export HBOX_STORAGE_CONN_STRING="file:///?no_tmp_dir=true"
+export HBOX_STORAGE_PREFIX_PATH="data"
+export HBOX_DATABASE_SQLITE_PATH="/data/homebox.db?_pragma=busy_timeout(999)&_pragma=journal_mode(WAL)&_pragma=time_format(datetime)"
+export HBOX_WEB_PORT="7745"
+
+# Use exec to replace shell with the actual process
+# This ensures s6 can properly supervise and signal the process
+exec /usr/bin/homebox

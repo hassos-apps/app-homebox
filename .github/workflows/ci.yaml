@@ -19,4 +19,4 @@ jobs:
       security-events: write
     uses: hassos-apps/workflows/.github/workflows/app-ci.yaml@main
     with:
-      addon: "__APP_SLUG__"
+      addon: "homebox"

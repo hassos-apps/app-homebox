@@ -1,4 +1,4 @@
-# Contributing to __APP_NAME__
+# Contributing to Homebox
 
 > This app is part of [HassOS Apps](https://github.com/hassos-apps) — a curated ecosystem of purpose-built Home Assistant apps.
 
@@ -11,13 +11,13 @@ Thanks for your interest in contributing!
 3. Make your changes
 4. Run linters locally:
    ```bash
-   hadolint __APP_SLUG__/Dockerfile
-   yamllint __APP_SLUG__/config.yaml __APP_SLUG__/build.yaml
-   shellcheck __APP_SLUG__/rootfs/**/*.sh
+   hadolint homebox/Dockerfile
+   yamllint homebox/config.yaml homebox/build.yaml
+   shellcheck homebox/rootfs/**/*.sh
    ```
 5. Test locally with a Docker build:
    ```bash
-   docker build -t __APP_SLUG__-test __APP_SLUG__/
+   docker build -t homebox-test homebox/
    ```
 6. Commit your changes and open a PR
 
@@ -31,4 +31,4 @@ Thanks for your interest in contributing!
 
 ## Reporting issues
 
-Use the [issue templates](https://github.com/hassos-apps/app-__APP_SLUG__/issues/new/choose) to report bugs or request features.
+Use the [issue templates](https://github.com/hassos-apps/app-homebox/issues/new/choose) to report bugs or request features.

@@ -1,5 +1,5 @@
 name: Bug report
-description: Report a bug with __APP_NAME__
+description: Report a bug with Homebox
 labels:
   - bug
 body:
@@ -49,7 +49,7 @@ body:
     id: version
     attributes:
       label: App version
-      description: What version of __APP_NAME__ are you running?
+      description: What version of Homebox are you running?
       placeholder: "1.0.0"
     validations:
       required: true

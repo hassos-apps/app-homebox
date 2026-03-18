@@ -1,6 +1,6 @@
-# __APP_NAME__
+# Homebox
 
-__APP_DESCRIPTION__
+Inventory and organization system for the Home User
 
 ## Installation
 
@@ -13,7 +13,7 @@ __APP_DESCRIPTION__
 2. Click on "Install".
 
 [my-ha-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[my-ha-url]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=__HA_ADDON_ID__&repository_url=https%3A%2F%2Fgithub.com%2Fhassos-apps%2Frepository
+[my-ha-url]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=local_homebox&repository_url=https%3A%2F%2Fgithub.com%2Fhassos-apps%2Frepository
 
 ## Configuration
 
@@ -35,7 +35,7 @@ functionality.
 Releases are based on [Semantic Versioning][semver], and use the format
 of `MAJOR.MINOR.PATCH`.
 
-[releases]: https://github.com/hassos-apps/app-__APP_SLUG__/releases
+[releases]: https://github.com/hassos-apps/app-homebox/releases
 [semver]: http://semver.org/spec/v2.0.0.html
 
 ## Support

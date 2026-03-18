@@ -1,6 +1,6 @@
 #include <tunables/global>
 
-profile __APP_SLUG__ flags=(attach_disconnected,mediate_deleted) {
+profile homebox flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
 
   # Capabilities
@@ -48,8 +48,6 @@ profile __APP_SLUG__ flags=(attach_disconnected,mediate_deleted) {
   ptrace (trace,read) peer=docker-default,
   signal (receive) set=(kill,term) peer=/usr/bin/docker,
 
-  # App-specific rules (customize per app):
-  # /opt/__APP_SLUG__/** rix,
-  # /config/** rw,
-  # /tmp/** rwk,
+  # Homebox specific
+  /tmp/** rwk,
 }

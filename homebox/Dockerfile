@@ -7,11 +7,24 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=amd64
+ARG HOMEBOX_VERSION="0.24.2"
 
-# Install runtime dependencies
+# Install runtime dependencies and download Homebox binary
+# hadolint ignore=DL3018
 RUN \
     apk add --no-cache \
-        jq=1.8.1-r0
+        jq=1.8.1-r0 \
+    \
+    && ARCH="${BUILD_ARCH}" \
+    && if [ "${ARCH}" = "amd64" ]; then ARCH="x86_64"; fi \
+    && if [ "${ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
+    \
+    && curl -fsSL -o /tmp/homebox.tar.gz \
+        "https://github.com/sysadminsmedia/homebox/releases/download/v${HOMEBOX_VERSION}/homebox_Linux_${ARCH}.tar.gz" \
+    && tar xzf /tmp/homebox.tar.gz -C /tmp \
+    && mv /tmp/homebox /usr/bin/homebox \
+    && chmod +x /usr/bin/homebox \
+    && rm -rf /tmp/*
 
 # Copy root filesystem
 COPY rootfs /

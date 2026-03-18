@@ -1,5 +1,5 @@
 # Labels for issue and PR management
-# Sync with: gh label import -R hassos-apps/app-__APP_SLUG__ .github/labels.yaml
+# Sync with: gh label import -R hassos-apps/app-homebox .github/labels.yaml
 
 - name: bug
   color: "d73a4a"

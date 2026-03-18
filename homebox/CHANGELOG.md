@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - __YEAR__-__MONTH__-__DAY__
+## [0.24.2] - 2026-03-18
 
 ### Added
 
-- Initial release of __APP_NAME__
+- Initial release of Homebox
 
-[Unreleased]: https://github.com/hassos-apps/app-__APP_SLUG__/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/hassos-apps/app-__APP_SLUG__/releases/tag/v1.0.0
+[Unreleased]: https://github.com/hassos-apps/app-homebox/compare/v0.24.2...HEAD
+[0.24.2]: https://github.com/hassos-apps/app-homebox/releases/tag/v0.24.2
