@@ -1,0 +1,41 @@
+# Home Assistant App configuration
+# Docs: https://developers.home-assistant.io/docs/apps/configuration
+name: "Homebox"
+version: "0.24.2"
+slug: "homebox"
+description: "Inventory and organization system for the Home User"
+url: "https://github.com/hassos-apps/app-homebox"
+arch:
+  - amd64
+  - aarch64
+image: "ghcr.io/hassos-apps/homebox-{arch}"
+init: false
+startup: application
+boot: auto
+ingress: false
+ports:
+  "7745/tcp": 7745
+ports_description:
+  "7745/tcp": "Homebox web interface"
+homeassistant_api: false
+auth_api: false
+map:
+  - type: ssl
+    read_only: true
+backup: hot
+options:
+  log_level: info
+  allow_registration: true
+  max_upload_size: 10
+  auto_increment_asset_id: true
+  allow_analytics: false
+  github_release_check: true
+  thumbnail_enabled: true
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)?
+  allow_registration: bool?
+  max_upload_size: int(1,100)?
+  auto_increment_asset_id: bool?
+  allow_analytics: bool?
+  github_release_check: bool?
+  thumbnail_enabled: bool?

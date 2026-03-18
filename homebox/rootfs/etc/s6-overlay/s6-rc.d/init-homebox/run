@@ -1,0 +1,13 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant App: Homebox
+# Configures Homebox before running
+# ==============================================================================
+
+bashio::log.info "Initializing Homebox..."
+
+# Ensure data directory exists
+mkdir -p /data
+
+bashio::log.info "Initialization complete"

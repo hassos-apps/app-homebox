@@ -1,0 +1,27 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant App: Homebox
+# Starts Homebox
+# ==============================================================================
+
+bashio::log.info "Starting Homebox..."
+
+# Fixed configuration
+export HBOX_MODE="production"
+export HBOX_STORAGE_CONN_STRING="file:///?no_tmp_dir=true"
+export HBOX_STORAGE_PREFIX_PATH="data"
+export HBOX_DATABASE_SQLITE_PATH="/data/homebox.db?_pragma=busy_timeout(999)&_pragma=journal_mode(WAL)&_pragma=time_format(datetime)"
+export HBOX_WEB_PORT="7745"
+export HBOX_OPTIONS_TRUST_PROXY="true"
+
+# User-configurable options
+export HBOX_LOG_LEVEL="$(bashio::config 'log_level')"
+export HBOX_OPTIONS_ALLOW_REGISTRATION="$(bashio::config 'allow_registration')"
+export HBOX_WEB_MAX_UPLOAD_SIZE="$(bashio::config 'max_upload_size')"
+export HBOX_OPTIONS_AUTO_INCREMENT_ASSET_ID="$(bashio::config 'auto_increment_asset_id')"
+export HBOX_OPTIONS_ALLOW_ANALYTICS="$(bashio::config 'allow_analytics')"
+export HBOX_OPTIONS_GITHUB_RELEASE_CHECK="$(bashio::config 'github_release_check')"
+export HBOX_THUMBNAIL_ENABLED="$(bashio::config 'thumbnail_enabled')"
+
+exec /usr/bin/homebox
